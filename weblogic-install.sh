@@ -3,8 +3,7 @@ sudo groupadd -g 54321 oci_fmw
 sudo useradd -u 54321 -g oci_fmw oci_fmw
 sudo su - oci_fmw
 sudo git yuminstall -y
-git clone weblogic12c-setup-files
-sudo tar -xvf jdk-8u241-linux-x64.tar.gz 
+sudo -ivh jdk-8u241-linux-x64.rpm
 sudo mkdir -p /usr/java
 sudo mv jdk1.8.0_241 /usr/java/
 sudo alternatives --install /usr/bin/java java /usr/java/jdk1.8.0_241/bin/java 1
