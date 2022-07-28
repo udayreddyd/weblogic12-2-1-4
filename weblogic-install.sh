@@ -24,7 +24,7 @@ echo "export PATH=$JAVA_HOME/bin:$PATH" >> /home/oci_fmw/.bash_profile
 cd /home/oci_fmw/software/
 
 # Response file for silent instllations
-sudo cp /home/oci_fmw/weblogic12c/home/oci_fmw/software/wls.rsp
+sudo cp /home/oci_fmw/weblogic12c/wls.rsp /home/oci_fmw/software/
 
 
 ## Inventory file
