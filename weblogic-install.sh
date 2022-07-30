@@ -1,9 +1,9 @@
 # JDK & Weblogic 12.2.1.4 installation
 sudo su - opc
-sudo -ivh /home/opc/jdk-8u241-linux-x64.rpm
+sudo -ivh /home/opc/jdk-8u341-linux-x64.rpm
 sudo mkdir -p /usr/java
-sudo mv jdk1.8.0_241 /usr/java/
-sudo alternatives --install /usr/bin/java java /usr/java/jdk1.8.0_241/bin/java 1
+sudo mv jdk1.8.0_341 /usr/java/
+sudo alternatives --install /usr/bin/java java /usr/java/jdk1.8.0_341/bin/java 1
 sudo alternatives --config java
 java -version
 mkdir -p /home/opc/oracle/middleware
@@ -21,11 +21,6 @@ cd /home/opc/weblogic12c/
 
 # Response file for silent instllations
 sudo cp /home/opc/weblogic12c/wls.rsp /home/opc/software/
-
-
-## Inventory file
-echo "inventory_loc=/home/opc/oraInventory" >> /home/opc/software/oraInst.loc
-echo "inst_group=oinstall" >> /home/opc/software/oraInst.loc
 
 ##Install weblogic12c
 inventory_loc=/home/opc/oraInventory
