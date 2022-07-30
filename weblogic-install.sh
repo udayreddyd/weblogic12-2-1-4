@@ -1,31 +1,31 @@
 # JDK & Weblogic 12.2.1.4 installation
-sudo groupadd -g 54321 oci_fmw
-sudo useradd -u 54321 -g oci_fmw oci_fmw
-sudo su - oci_fmw
-sudo git yuminstall -y
+sudo groupadd -g 54321 opc
+sudo useradd -u 54321 -g opc opc
+sudo su - opc
 sudo -ivh jdk-8u241-linux-x64.rpm
 sudo mkdir -p /usr/java
 sudo mv jdk1.8.0_241 /usr/java/
 sudo alternatives --install /usr/bin/java java /usr/java/jdk1.8.0_241/bin/java 1
 sudo alternatives --config java
 java -version
-mkdir -p /home/oci_fmw/oracle/middleware
-mkdir -p /home/oci_fmw/config/domains
-mkdir -p /home/oci_fmw/oracle/config/applications
-mkdir -p /home/oci_fmw/software
-chown -R oci_fmw:oci_fmw /home/oci_fmw/oracle/middleware  /home/oci_fmw/config/domains /home/oci_fmw/oracle/config/applications /home/oci_fmw/software
-chmod -R 775 /home/oci_fmw/oracle/middleware  /home/oci_fmw/config/domains /home/oci_fmw/oracle/config/applications /home/oci_fmw/software
-touch /home/oci_fmw/.bash_profile
-echo "export MW_HOME=/u01/app/oracle/middleware" > /home/oci_fmw/.bash_profile
-echo "export WLS_HOME=$MW_HOME/wlserver" >> /home/oci_fmw/.bash_profile
-echo "export WL_HOME=$WLS_HOME" >> /home/oci_fmw/.bash_profile
-echo "export PATH=$JAVA_HOME/bin:$PATH" >> /home/oci_fmw/.bash_profile
-cd /home/oci_fmw/software/
+mkdir -p /home/opc/oracle/middleware
+mkdir -p /home/opc/config/domains
+mkdir -p /home/opc/oracle/config/applications
+mkdir -p /home/opc/software
+chown -R opc:opc /home/opc/oracle/middleware  /home/opc/config/domains /home/opc/oracle/config/applications /home/opc/software
+chmod -R 775 /home/opc/oracle/middleware  /home/opc/config/domains /home/opc/oracle/config/applications /home/opc/software
+touch /home/opc/.bash_profile
+echo "export MW_HOME=/u01/app/oracle/middleware" > /home/opc/.bash_profile
+echo "export WLS_HOME=$MW_HOME/wlserver" >> /home/opc/.bash_profile
+echo "export WL_HOME=$WLS_HOME" >> /home/opc/.bash_profile
+echo "export PATH=$JAVA_HOME/bin:$PATH" >> /home/opc/.bash_profile
+cd /home/opc/software/
 
 # Response file for silent instllations
-sudo cp /home/oci_fmw/weblogic12c/wls.rsp /home/oci_fmw/software/
+sudo cp /home/opc/weblogic12c/wls.rsp /home/opc/software/
 
 
 ## Inventory file
-echo "inventory_loc=/home/opc/oraInventory" >> /home/oci_fmw/software/oraInst.loc
-echo "inst_group=oinstall" >> /home/oci_fmw/software/oraInst.loc
+echo "inventory_loc=/home/opc/oraInventory" >> /home/opc/software/oraInst.loc
+echo "inst_group=oinstall" >> /home/opc/software/oraInst.loc
+
