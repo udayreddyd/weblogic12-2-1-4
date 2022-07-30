@@ -28,5 +28,9 @@ echo "inventory_loc=/home/opc/oraInventory" >> /home/opc/software/oraInst.loc
 echo "inst_group=oinstall" >> /home/opc/software/oraInst.loc
 
 ##Install weblogic12c
-
+inventory_loc=/home/opc/oraInventory
+WLS_PATH=/home/opc/fmw_12.2.1.4.0_wls_lite_generic.jar
+RESPONSE_FILE=/home/opc/wls.rsp
+ORACLE_INVENTORY_LOCATION=/home/opc/oraInst.loc
+sudo java -jar $WLS_PATH -silent -responseFile $RESPONSE_FILE -invPtrLoc $ORACLE_INVENTORY_LOCATION
 
