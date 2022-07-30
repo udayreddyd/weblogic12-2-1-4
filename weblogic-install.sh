@@ -21,6 +21,7 @@ cd /home/opc/weblogic12c/
 
 # Response file for silent instllations
 sudo cp /home/opc/weblogic12c/wls.rsp /home/opc/software/
+sudo cp /home/opc/weblogic12c/oraInst.loc /home/opc/
 
 ##Install weblogic12c
 inventory_loc=/home/opc/oraInventory
